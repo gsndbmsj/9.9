@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="9.9.js"></script>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>  //寻找arr数组中是否存在某一个值value   存在的话 返回数组下标
+    var arr=[1,2,3,4,6,7,8]
+    var result=fn(arr,7)
+    console.log(result)
+	
+</script>
+
+<script>  
+    //寻找arr数组中是否存在某一个值value   存在的话    返回此数组最后一个元素下标
+    var arr=[1,2,3,4,6,7,8,7]
+    var result=fn1(arr,7)
+    console.log(result)
+	
+</script>
+
+<script>  //将数组进行翻转
+	var arr=[1,2,3,4,6,7,8,7]
+	var result = reverse(arr)
+	console.log(result)
+
+</script>
+
+<script>  //万能的删除
+    var arr=[1,2,3,4,6,7,8,7]
+    var result=spliceCancel(arr,2,3)
+    console.log(result)
+	
+</script>
+
+<script>  //万能的添加
+    var arr=[1,2,3,4,6,7,8,7]
+    var result=spliceAdd(arr,2,'a','b','f')
+    console.log(result)
+	
+</script>
+
+<script>  //万能的添加和删除
+    var arr=[1,2,3,4,6,7,8,7]
+    var result=splice(arr,2,2,'a','b','f')
+    console.log(result)
+	
+</script>
+
+<script>  // 有一个满足条件   返回true
+   var arr=[-1,1,2,3,4,6,7,8,7]
+   var result = some(arr,function(value){return value>0})
+   console.log(result)
+    
+</script>
+
+<script>  //全部满足条件  返回true
+   var arr=[-1,1,2,3,4,6,7,8,7]
+   var result = every(arr,function(value){return value>0})
+   console.log(result)
+</script>
+<script>  //递归   他不是循环
+fn1()
+function fn1(){
+  fn2()
+  alert(1)
+}
+function fn2(){
+  fn3()
+  alert(2)
+}
+function fn3(){
+  fn4()
+  alert(3)
+}
+function fn4(){
+  alert(4)
+}
+</script>
+
+<script>  //自己调用自己
+fn(1)
+function fn(num){
+  if(num<5){
+    fn(++num)
+  }
+  alert(num)
+}
+</script>
+
+<script>  //地址  浅拷贝
+  var arr=[1,2,3,4,6,7]
+  var arr1=arr
+  arr1[1]='a'
+  arr[3]='x'
+  console.log(arr1) 
+  console.log(arr)
+    
+</script>
+
+<script>  //传值  深拷贝
+  var arr=[1,2,3,4,6,7]
+  var arr1=[]
+  for(var i=0;i<arr.length;i++){
+    arr1[i]=arr[i]
+  }
+  arr1[1]='a'
+  arr[3]='x'
+  console.log(arr1) 
+  console.log(arr)
+    
+</script>
+
+<script>
+    var arr=[1,2,3,4,5,6,[2,3,5]]
+     
+     
+
+    function copy(arr){
+        var newarr=[]
+        for(var i=0;i<arr.length;i++){
+            if(typeof arr[i]=='object'){
+                newarr[i]=copy(arr[i])
+            }else{
+                newarr[i]=arr[i]
+            }
+        }
+        return newarr
+
+
+    }
+    console.log(copy(arr))
+    arr[1]=5
+    console.log(arr)
+
+    
+
+    
+</script>
+
